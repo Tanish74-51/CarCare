@@ -339,21 +339,18 @@ export default function PickupDrop() {
         {/* How it works */}
         <div className="card" style={{ alignSelf: 'flex-start' }}>
           <p className="section-title">How it Works</p>
-          {tripMode === 'solo' ? (
-            [
+          {(tripMode === 'solo' ? [
               ['1', 'Enter your car\'s current location and where it needs to go.'],
               ['2', 'A verified CarCare driver is assigned and heads to your car.'],
               ['3', 'Driver picks up your car and drives it to the destination.'],
               ['4', 'You get a confirmation when the car is delivered safely.'],
-            ]
-          ) : (
-            [
+            ] : [
               ['1', 'Enter your location and destination.'],
               ['2', 'A verified CarCare driver arrives at your location.'],
               ['3', 'Driver takes the wheel while you relax in your own car.'],
               ['4', 'You arrive at your destination safely without driving.'],
             ]
-          )}.map(([n, text]) => (
+          ).map(([n, text]) => (
             <div key={n} style={{ display: 'flex', gap: 12, marginBottom: 14 }}>
               <div style={{
                 width: 24, height: 24, borderRadius: '50%',
